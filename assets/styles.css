@@ -109,15 +109,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .tags li { border: 1px solid var(--dim); border-radius: 999px; padding: 10px 18px; font-size: 16px; }
 
-/* Kixi case */
-.case { padding-block: clamp(56px, 9vw, 120px); }
-.case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); align-items: center; }
-.case-screen { display: flex; align-items: center; justify-content: center; padding: clamp(8px, 4vw, 48px); }
-.case-screen svg { width: min(100%, 340px); height: auto; }
+/* Kixi */
 .kx-ship { fill: var(--lilac); }
-.case-text { display: flex; flex-direction: column; gap: 20px; }
-.case-text h2 { font-size: clamp(44px, 6vw, 88px); line-height: .95; }
-.case-lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--soft); max-width: 30em; }
 .facts { margin: 8px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--line); padding-top: 20px; }
 .facts dt { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: -0.03em; margin-bottom: 6px; }
 .facts dd { margin: 0; font-size: 15px; color: var(--muted); line-height: 1.5; }
@@ -209,7 +202,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .foot-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 960px) {
-  .case-grid, .area-grid, .kx-hero { grid-template-columns: minmax(0, 1fr); }
+  .area-grid, .kx-hero { grid-template-columns: minmax(0, 1fr); }
   .pledges.pledges-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kx-mark svg { width: 200px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -251,8 +244,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .svc-d { grid-column: 1; grid-row: 2; font-size: 15px; }
   .svc-go { grid-column: 2; grid-row: 1 / span 2; }
   .kx-mark svg { width: 140px; }
-  .case-screen { justify-content: flex-start; padding: 0; }
-  .case-screen svg { width: 160px; }
   .facts, .pledges, .pledges.pledges-4, .steps { grid-template-columns: minmax(0, 1fr); }
   .cta-box { border-radius: 28px; }
   .foot { padding-bottom: 88px; }
