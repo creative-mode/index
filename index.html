@@ -24,7 +24,51 @@
       <span>cre<svg class="alpha" viewBox="0 -588 970 604" aria-hidden="true"><path d="M396 16Q286 16 204.0 -21.5Q122 -59 76.0 -127.5Q30 -196 30 -285Q30 -376 76.0 -444.0Q122 -512 204.0 -550.0Q286 -588 396 -588Q505 -588 587.5 -550.0Q670 -512 716.0 -444.0Q762 -376 762 -285Q762 -196 716.0 -127.5Q670 -59 587.5 -21.5Q505 16 396 16ZM396 -135Q446 -135 481.5 -153.0Q517 -171 536.0 -205.0Q555 -239 555 -285Q555 -333 536.0 -366.5Q517 -400 481.5 -418.0Q446 -436 396 -436Q346 -436 310.0 -418.0Q274 -400 255.0 -366.5Q236 -333 236 -286Q236 -239 255.0 -205.0Q274 -171 310.0 -153.0Q346 -135 396 -135Z"/><path d="M560 -286 L760 -286 L930 -571 L730 -571 Z"/><path d="M560 -286 L760 -286 L930 0 L730 0 Z"/></svg>tive</span>
       <span class="logo-mode">m<svg class="ring" viewBox="0 0 220 58.5" aria-hidden="true"><rect x="6.5" y="6.5" width="207" height="45.5" rx="22.75" fill="none" stroke="currentColor" stroke-width="13"/><rect class="logo-fill" x="19" y="19" width="92" height="20.5" rx="10.25"/></svg>de</span>
     </a>
-    <a href="#contacto" class="nav-cta">Falar connosco</a>
+    <nav id="nav" class="nav" aria-label="Principal">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <button type="button" class="nav-item" aria-expanded="false" aria-controls="m-servicos">Serviços<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+          <div class="menu" id="m-servicos">
+            <div class="wrap menu-grid">
+              <div class="menu-links">
+                <a href="#servicos" data-svc="ia"><strong>IA e Dados</strong><span>Analytics, modelos e decisões orientadas por dados.</span></a>
+                <a href="#servicos" data-svc="software"><strong>Software</strong><span>Aplicações, integrações e plataformas cloud.</span></a>
+                <a href="#servicos" data-svc="bpm"><strong>BPM e Automação</strong><span>Processos modelados, automatizados e monitorizados.</span></a>
+                <a href="#servicos" data-svc="design"><strong>Branding e Design</strong><span>Identidade, produto e comunicação visual.</span></a>
+              </div>
+              <div class="menu-aside">
+                <p>Quatro áreas, uma só equipa responsável pelo resultado.</p>
+                <a href="#metodo">Ver como trabalhamos</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-menu">
+          <button type="button" class="nav-item" aria-expanded="false" aria-controls="m-produtos">Produtos<svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+          <div class="menu" id="m-produtos">
+            <div class="wrap menu-grid">
+              <div class="menu-links">
+                <a href="#kixi"><strong>Kixi</strong><span>Estudo e exames para alunos, com OCR e tutor IA. Lançamento a 15 de outubro.</span></a>
+              </div>
+              <div class="menu-aside">
+                <p>Produtos próprios, feitos com IA e dados para problemas reais.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav-item" href="#metodo">Como trabalhamos</a></li>
+        <li><a class="nav-item" href="#sobre">Sobre</a></li>
+      </ul>
+      <div class="nav-mobile-cta"><a class="btn btn-lilac" href="#contacto">Começar projeto</a></div>
+    </nav>
+    <div class="top-actions">
+      <a href="mailto:ola@creativemode.ao" class="top-link">Contacto</a>
+      <a href="#contacto" class="nav-cta">Começar projeto</a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+        <svg class="i-open" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        <svg class="i-close" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -51,28 +95,28 @@
       <p>Cada área tem especialistas próprios. Quando um projeto as cruza, planeiam juntas e respondem pelo mesmo resultado.</p>
     </div>
     <div class="svc-list reveal">
-      <details class="svc" name="servicos" open>
+      <details class="svc" name="servicos" id="svc-ia" open>
         <summary><span class="svc-t">IA e Dados</span><span class="svc-d">Analytics, modelos e decisões orientadas por dados.</span><span class="svc-x" aria-hidden="true"></span></summary>
         <div class="svc-body">
           <ul class="tags"><li>Dashboards e indicadores</li><li>Engenharia e qualidade de dados</li><li>Modelos de IA aplicados ao negócio</li></ul>
           <a class="link-arrow" href="mailto:ola@creativemode.ao?subject=IA%20e%20Dados">Falar sobre IA e Dados</a>
         </div>
       </details>
-      <details class="svc" name="servicos">
+      <details class="svc" name="servicos" id="svc-software">
         <summary><span class="svc-t">Software</span><span class="svc-d">Desenvolvimento, integrações e plataformas.</span><span class="svc-x" aria-hidden="true"></span></summary>
         <div class="svc-body">
           <ul class="tags"><li>Aplicações web e mobile</li><li>APIs e integrações entre sistemas</li><li>Plataformas e arquitetura cloud</li></ul>
           <a class="link-arrow" href="mailto:ola@creativemode.ao?subject=Software">Falar sobre software</a>
         </div>
       </details>
-      <details class="svc" name="servicos">
+      <details class="svc" name="servicos" id="svc-bpm">
         <summary><span class="svc-t">BPM e Automação</span><span class="svc-d">Modelação, automação e monitorização de processos.</span><span class="svc-x" aria-hidden="true"></span></summary>
         <div class="svc-body">
           <ul class="tags"><li>Mapeamento e redesenho de processos</li><li>Fluxos automatizados de ponta a ponta</li><li>Monitorização e melhoria contínua</li></ul>
           <a class="link-arrow" href="mailto:ola@creativemode.ao?subject=BPM%20e%20Automa%C3%A7%C3%A3o">Falar sobre processos</a>
         </div>
       </details>
-      <details class="svc" name="servicos">
+      <details class="svc" name="servicos" id="svc-design">
         <summary><span class="svc-t">Branding e Design</span><span class="svc-d">Identidade, conteúdo e experiência visual.</span><span class="svc-x" aria-hidden="true"></span></summary>
         <div class="svc-body">
           <ul class="tags"><li>Identidade de marca e manuais</li><li>Design de produto e UX/UI</li><li>Conteúdo e comunicação visual</li></ul>
@@ -113,7 +157,7 @@
     </ol>
   </section>
 
-  <section class="partner">
+  <section id="sobre" class="partner">
     <div class="wrap partner-grid">
       <div class="reveal">
         <h2>Um parceiro, não quatro fornecedores.</h2>
@@ -139,11 +183,17 @@
 </main>
 
 <footer class="foot">
-  <div class="wrap foot-row">
-    <p>Creative Mode</p>
-    <nav aria-label="Rodapé"><a href="#servicos">Serviços</a><a href="#kixi">Kixi</a><a href="#metodo">Método</a><a href="https://github.com/creative-mode">GitHub</a></nav>
-    <p>© 2026 creativemode.ao</p>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <p class="foot-name">creative mode</p>
+      <p>Dados e IA para produtos que mudam o dia a dia.</p>
+    </div>
+    <nav aria-label="Serviços"><h2>Serviços</h2><a href="#servicos" data-svc="ia">IA e Dados</a><a href="#servicos" data-svc="software">Software</a><a href="#servicos" data-svc="bpm">BPM e Automação</a><a href="#servicos" data-svc="design">Branding e Design</a></nav>
+    <nav aria-label="Produtos"><h2>Produtos</h2><a href="#kixi">Kixi</a></nav>
+    <nav aria-label="Empresa"><h2>Empresa</h2><a href="#metodo">Como trabalhamos</a><a href="#sobre">Sobre</a><a href="#contacto">Contacto</a></nav>
+    <nav aria-label="Contacto"><h2>Fale connosco</h2><a href="mailto:ola@creativemode.ao">ola@creativemode.ao</a><a href="https://github.com/creative-mode">GitHub</a></nav>
   </div>
+  <div class="wrap foot-base"><p>© 2026 Creative Mode</p><p>creativemode.ao</p></div>
 </footer>
 
 <div class="bar">
