@@ -1,13 +1,32 @@
 (function () {
-  var btn = document.querySelector('.cm-menu-btn');
+  var header = document.querySelector('.top');
+  var btn = document.querySelector('.menu-btn');
   var nav = document.getElementById('menu');
-  if (!btn || !nav) return;
-  function set(open) {
-    nav.classList.toggle('is-open', open);
+  var bar = document.querySelector('.bar');
+  var hero = document.getElementById('topo');
+  var contact = document.getElementById('contacto');
+
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   }
-  btn.addEventListener('click', function () { set(!nav.classList.contains('is-open')); });
-  nav.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  if (btn && nav) {
+    btn.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  }
+
+  // header border once the page moves
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // phone CTA bar: appears after the hero, hides at the contact block
+  if ('IntersectionObserver' in window && bar && hero && contact) {
+    var pastHero = false, atContact = false;
+    var update = function () { bar.classList.toggle('show', pastHero && !atContact); };
+    new IntersectionObserver(function (es) { pastHero = !es[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function (es) { atContact = es[0].isIntersecting; update(); }).observe(contact);
+  }
 })();
