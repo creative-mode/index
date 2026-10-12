@@ -96,12 +96,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* Kixi case */
 .case { padding-block: clamp(56px, 9vw, 120px); }
 .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); align-items: center; }
-.case-screen { aspect-ratio: 4 / 3; border-radius: 28px; background-color: var(--panel); background-image: radial-gradient(circle, rgba(244,244,244,0.07) 1px, transparent 1.4px); background-size: 8px 8px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 8% 10%; overflow: hidden; }
+.case-screen { aspect-ratio: 4 / 3; border-radius: 28px; background-color: var(--panel); background-image: radial-gradient(circle, rgba(244,244,244,0.07) 1px, transparent 1.4px); background-size: 8px 8px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; padding: 22%; overflow: hidden; }
 .case-screen svg { width: 100%; height: auto; }
 .kx-ship { fill: var(--lilac); }
-.kx-enemy { fill: #3A3A3A; }
-.kx-hit { fill: var(--ink); }
-.kx-shot { fill: var(--lilac); }
 .case-text { display: flex; flex-direction: column; gap: 20px; }
 .case-text h2 { font-size: clamp(44px, 6vw, 88px); line-height: .95; }
 .case-lead { font-size: clamp(18px, 1.6vw, 21px); color: var(--soft); max-width: 30em; }
@@ -164,12 +161,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
     /* method track fills with the scroll */
     .steps::after { animation: track linear both; animation-timeline: view(); animation-range: entry 60% cover 60%; }
     @keyframes track { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-
-    /* Kixi: the ship fires at the topic above, which blinks out */
-    .kx-shot { animation: shot 2.6s linear infinite; }
-    @keyframes shot { 0% { transform: translateY(0); opacity: 1; } 45% { transform: translateY(-9px); opacity: 1; } 46%, 100% { transform: translateY(-9px); opacity: 0; } }
-    .kx-hit { animation: hit 2.6s steps(1) infinite; }
-    @keyframes hit { 0%, 45% { opacity: 1; } 46%, 80% { opacity: 0; } 81%, 100% { opacity: 1; } }
 
     .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 70%; }
     @keyframes rise { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
