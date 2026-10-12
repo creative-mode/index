@@ -140,6 +140,22 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .pledges.pledges-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .nav-item[aria-current="page"] { color: var(--ink); }
 
+/* faq: closed by default, so it stays short */
+.faq { padding-block: clamp(56px, 8vw, 104px); }
+.faq-grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px clamp(32px, 6vw, 96px); align-items: start; }
+.faq h2 { font-size: clamp(30px, 3.6vw, 48px); line-height: 1; }
+.qa-list { border-top: 1px solid var(--line); }
+.qa { border-bottom: 1px solid var(--line); }
+.qa summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; padding: 16px 0; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa-q { font-weight: 600; font-size: clamp(17px, 1.5vw, 20px); transition: color .2s; }
+.qa summary:hover .qa-q, .qa[open] .qa-q { color: var(--lilac); }
+.qa-x { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--dim); position: relative; }
+.qa-x::before, .qa-x::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 2px; background: var(--ink); transform: translate(-50%, -50%); transition: transform .2s; }
+.qa-x::after { transform: translate(-50%, -50%) rotate(90deg); }
+.qa[open] .qa-x::after { transform: translate(-50%, -50%) rotate(0); }
+.qa p { color: var(--soft); max-width: 34em; padding: 0 0 24px; }
+
 /* method */
 .method { padding-block: clamp(56px, 9vw, 120px); }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
@@ -202,7 +218,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
   .foot-brand { grid-column: 1 / -1; }
 }
 @media (max-width: 960px) {
-  .area-grid, .kx-hero { grid-template-columns: minmax(0, 1fr); }
+  .area-grid, .kx-hero, .faq-grid { grid-template-columns: minmax(0, 1fr); }
   .pledges.pledges-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .kx-mark svg { width: 200px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
