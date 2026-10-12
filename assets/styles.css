@@ -1,7 +1,7 @@
 /* Creative Mode · landing
    One dark world: black ground, white type, lilac as the only accent.
-   The ring appears three times with a job each: logo (fills as you read),
-   hero (fills on arrival), method track (fills as you scroll). */
+   The ring lives in the logo and fills as the page is read; the method
+   track fills as you scroll. */
 
 :root {
   color-scheme: dark;
@@ -27,7 +27,6 @@ p { margin: 0; }
 a { color: inherit; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--lilac); outline-offset: 4px; border-radius: 6px; }
 .wrap { max-width: 1280px; margin-inline: auto; padding-inline: var(--gutter); }
-.kicker { font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 16px; top: 16px; z-index: 60; background: var(--lilac); color: var(--bg); padding: 12px 16px; border-radius: 12px; }
 
@@ -67,8 +66,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .hero-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px 48px; }
 .lead { max-width: 34em; font-size: clamp(18px, 1.6vw, 21px); color: var(--soft); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
-.hero-ring { width: 100%; height: auto; margin-top: clamp(16px, 4vw, 48px); }
-.hero-fill { fill: var(--lilac); transform-box: fill-box; transform-origin: left center; }
 
 /* manifesto */
 .manifesto { padding-block: clamp(72px, 12vw, 160px); }
@@ -151,9 +148,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 
 /* motion: everything is visible without it */
 @media (prefers-reduced-motion: no-preference) {
-  .hero-fill { animation: fill-in 2.4s cubic-bezier(.2,.8,.2,1) .2s both; }
-  @keyframes fill-in { from { transform: scaleX(.12); } to { transform: scaleX(1); } }
-
   @supports (animation-timeline: scroll()) {
     /* the logo ring fills as the page is read */
     .logo-fill { animation: read linear both; animation-timeline: scroll(root); }
