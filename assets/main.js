@@ -65,18 +65,6 @@
   });
   phone.addEventListener && phone.addEventListener('change', function () { setPhoneMenu(false); });
 
-  // links to a service open its row
-  document.addEventListener('click', function (e) {
-    var a = e.target.closest('a[data-svc]');
-    if (!a) return;
-    var d = document.getElementById('svc-' + a.getAttribute('data-svc'));
-    if (!d) return;
-    e.preventDefault();
-    d.open = true;
-    d.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#servicos');
-  });
-
   // phone CTA bar: appears after the hero, hides at the contact block
   if ('IntersectionObserver' in window && bar && hero && contact) {
     var pastHero = false, atContact = false;
