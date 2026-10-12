@@ -38,6 +38,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .logo svg { fill: currentColor; }
 .alpha { width: .97em; height: .604em; vertical-align: -0.016em; margin-right: -0.035em; }
 .logo-mode { display: flex; align-items: baseline; }
+.logo, .logo span, .nav-cta { white-space: nowrap; }
+.logo { flex-shrink: 0; }
 .ring { width: 2.2em; height: .585em; margin: 0 .04em; }
 .logo-fill { fill: var(--lilac); transform-box: fill-box; transform-origin: left center; }
 .nav-cta { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; border: 1.5px solid var(--dim); padding: 11px 20px; border-radius: 999px; }
@@ -170,7 +172,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 @media (max-width: 760px) {
   body { font-size: 17px; }
   .top-row { min-height: 64px; }
-  .nav-cta { padding: 8px 16px; font-size: 14px; }
+  .logo { font-size: 17px; }
+  .nav-cta { padding: 0 16px; font-size: 14px; }
   .hero-row, .actions { flex-direction: column; align-items: stretch; }
   .actions .btn { width: 100%; }
   .actions .link-arrow { justify-content: center; }
