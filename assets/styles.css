@@ -40,15 +40,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .logo-mode { display: flex; align-items: baseline; }
 .ring { width: 2.2em; height: .585em; margin: 0 .04em; }
 .logo-fill { fill: var(--lilac); transform-box: fill-box; transform-origin: left center; }
-.nav { display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500; }
-.nav a { text-decoration: none; color: var(--soft); }
-.nav a:hover { color: var(--ink); }
-.nav-cta { color: var(--ink) !important; border: 1.5px solid var(--dim); padding: 11px 20px; border-radius: 999px; }
+.nav-cta { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; border: 1.5px solid var(--dim); padding: 11px 20px; border-radius: 999px; }
 .nav-cta:hover { border-color: var(--lilac); }
-.menu-btn { display: none; width: 48px; height: 48px; border: 0; border-radius: 14px; background: #1A1A1A; align-items: center; justify-content: center; cursor: pointer; }
-.menu-btn svg { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
-.menu-btn .i-close, .menu-btn[aria-expanded="true"] .i-open { display: none; }
-.menu-btn[aria-expanded="true"] .i-close { display: block; }
 
 /* buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 30px; border-radius: 999px; font-weight: 600; font-size: 17px; text-decoration: none; transition: transform .15s ease; }
@@ -176,12 +169,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 /* phone */
 @media (max-width: 760px) {
   body { font-size: 17px; }
-  .top-row { min-height: 64px; flex-wrap: wrap; gap: 0; padding-right: 12px; }
-  .menu-btn { display: flex; }
-  .nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 4px 0 20px; }
-  .nav.open { display: flex; }
-  .nav a { min-height: 56px; display: flex; align-items: center; color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -0.03em; border-bottom: 1px solid var(--line); }
-  .nav-cta { border: 0 !important; border-bottom: 1px solid var(--line) !important; border-radius: 0; padding: 0; }
+  .top-row { min-height: 64px; }
+  .nav-cta { padding: 8px 16px; font-size: 14px; }
   .hero-row, .actions { flex-direction: column; align-items: stretch; }
   .actions .btn { width: 100%; }
   .actions .link-arrow { justify-content: center; }
