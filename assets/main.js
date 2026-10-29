@@ -7,10 +7,17 @@
   // o cabeçalho fica por cima da forma de abertura e só ganha fundo branco
   // quando a forma acaba (ou quando um menu está aberto)
   var opening = document.querySelector('.shape-hero');
+  // três estados: transparente no topo; com a cor da abertura enquanto o
+  // conteúdo passa por baixo (para o texto nunca se cruzar sem contraste);
+  // branco quando o cabeçalho chega ao corte da forma
+  var cut = opening && opening.querySelector('.edge-bottom');
   function onScroll() {
-    var past = !opening || opening.getBoundingClientRect().bottom <= header.offsetHeight + 1;
+    var h = header.offsetHeight;
+    var limit = opening ? (cut ? cut.getBoundingClientRect().top : opening.getBoundingClientRect().bottom) : 0;
+    var past = !opening || limit <= h;
     var open = document.body.classList.contains('nav-open') || !!header.querySelector('.nav-item[aria-expanded="true"]');
     header.classList.toggle('solid', past || open);
+    header.classList.toggle('on-hero', !past && !open && window.scrollY > 4);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);

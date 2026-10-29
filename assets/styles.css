@@ -372,12 +372,14 @@ main { overflow-x: clip; }
 .top .nav-cta:hover { background: var(--pop); }
 .top .menu-btn { color: currentColor; }
 .top .menu { color: var(--ink); }
-.top.solid { background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom-color: var(--line); color: var(--ink); }
+.top.solid { background: #FFFFFF; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom-color: var(--line); color: var(--ink); }
 .top.solid .nav-item, .top.solid .top-link { color: var(--soft); }
 .top.solid .nav-item:hover, .top.solid .nav-item[aria-expanded="true"], .top.solid .top-link:hover, .top.solid .nav-item[aria-current="page"] { color: var(--ink); }
 .top.solid .logo-fill { fill: var(--purple); }
 .top.solid .nav-cta { background: var(--ink); color: #fff; }
 .top.solid .nav-cta:hover { background: var(--purple); }
+/* enquanto o conteúdo da abertura passa por baixo, o cabeçalho ganha a cor da própria abertura */
+.top.on-hero { background: var(--hero-bg, var(--purple)); box-shadow: 0 1px 0 rgba(255, 255, 255, .08); }
 /* abertura clara (Kixi): cabeçalho escuro desde o início */
 .hero-light .top { color: var(--ink); }
 .hero-light .top .nav-item, .hero-light .top .top-link { color: var(--soft); }
