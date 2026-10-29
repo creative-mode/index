@@ -321,7 +321,7 @@ main { overflow-x: clip; }
 
 .shape-hero { padding-bottom: 12.5vw; }
 .hero { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; padding-top: clamp(56px, 8vw, 120px); padding-bottom: clamp(16px, 3vw, 40px); }
-.hero h1 { font-size: clamp(38px, 5.8vw, 92px); line-height: .98; max-width: 15ch; color: #fff; }
+.hero h1 { font-size: clamp(42px, 6.8vw, 108px); line-height: .96; max-width: 12ch; color: #fff; }
 .hero h1 em { color: var(--pop); }
 .is-purple .lead, .is-ink .lead { color: rgba(255, 255, 255, .86); }
 .hero .lead { max-width: 32em; }
