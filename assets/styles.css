@@ -359,3 +359,56 @@ main { overflow-x: clip; }
   .hero, .page-hero { padding-top: 56px; }
   .hero .actions .btn { width: 100%; }
 }
+
+/* ===================================================================
+   Cabeçalho por cima da forma de abertura: transparente e branco enquanto
+   a forma está por baixo; ao sair dela fica branco, com texto escuro.
+   =================================================================== */
+.top { position: fixed; left: 0; right: 0; top: 0; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom: 1px solid transparent; color: #fff; transition: background .3s ease, color .3s ease, border-color .3s ease; }
+.top .nav-item, .top .top-link { color: rgba(255, 255, 255, .82); transition: color .3s ease; }
+.top .nav-item:hover, .top .nav-item[aria-expanded="true"], .top .top-link:hover, .top .nav-item[aria-current="page"] { color: #fff; }
+.top .logo-fill { fill: var(--pop); transition: fill .3s ease; }
+.top .nav-cta { background: #fff; color: var(--ink); transition: background .3s ease, color .3s ease; }
+.top .nav-cta:hover { background: var(--pop); }
+.top .menu-btn { color: currentColor; }
+.top .menu { color: var(--ink); }
+.top.solid { background: rgba(255, 255, 255, .94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom-color: var(--line); color: var(--ink); }
+.top.solid .nav-item, .top.solid .top-link { color: var(--soft); }
+.top.solid .nav-item:hover, .top.solid .nav-item[aria-expanded="true"], .top.solid .top-link:hover, .top.solid .nav-item[aria-current="page"] { color: var(--ink); }
+.top.solid .logo-fill { fill: var(--purple); }
+.top.solid .nav-cta { background: var(--ink); color: #fff; }
+.top.solid .nav-cta:hover { background: var(--purple); }
+/* abertura clara (Kixi): cabeçalho escuro desde o início */
+.hero-light .top { color: var(--ink); }
+.hero-light .top .nav-item, .hero-light .top .top-link { color: var(--soft); }
+.hero-light .top .nav-item:hover, .hero-light .top .nav-item[aria-current="page"] { color: var(--ink); }
+.hero-light .top .logo-fill { fill: var(--purple); }
+.hero-light .top .nav-cta { background: var(--ink); color: #fff; }
+/* a forma de abertura começa no topo da página, por baixo do cabeçalho */
+.shape-hero > .wrap { padding-top: calc(76px + clamp(48px, 7vw, 104px)); }
+.shape-hero .hero, .shape-hero .page-hero { padding-top: calc(76px + clamp(48px, 7vw, 104px)); }
+.shape-hero .kx-hero { padding-top: calc(76px + clamp(40px, 6vw, 88px)); }
+
+/* elementos de cada ponto: ficam no canto, longe do texto */
+.blob-hero { width: min(34vw, 500px); right: -11vw; top: -8vw; }
+.blob-page { width: min(32vw, 460px); right: -6vw; top: -4vw; }
+.blob-lamina { width: min(40vw, 580px); right: -12vw; top: 2vw; }
+.blob-bloco { width: min(30vw, 440px); right: -8vw; top: -10vw; }
+.blob-cta { width: min(36vw, 520px); right: -6vw; bottom: -8vw; }
+.blob-divisa { width: min(26vw, 380px); right: 2vw; bottom: -4vw; }
+.blob-graos { width: min(30vw, 440px); right: -2vw; bottom: -2vw; }
+.blob-fatia { width: min(42vw, 600px); right: -10vw; bottom: -6vw; }
+.cta-inner, .hero, .page-hero { max-width: 1280px; }
+.hero h1, .page-hero h1, .page-hero .lead, .cta-inner > * { max-width: min(70%, 15ch); }
+.page-hero .lead, .cta-inner p { max-width: min(60%, 30em); }
+
+@media (max-width: 760px) {
+  .shape-hero > .wrap, .shape-hero .hero, .shape-hero .page-hero { padding-top: calc(64px + 64px); }
+  .shape-hero .kx-hero { padding-top: calc(64px + 24px); }
+  .blob-hero { width: 46vw; right: -16vw; top: -14vw; }
+  .blob-page, .blob-bloco { width: 42vw; right: -14vw; top: -14vw; }
+  .blob-lamina { width: 56vw; right: -22vw; top: -6vw; }
+  .blob-cta, .blob-fatia, .blob-graos, .blob-divisa { width: 46vw; right: -10vw; bottom: -10vw; }
+  .hero h1, .page-hero h1, .page-hero .lead, .cta-inner > *, .cta-inner p { max-width: none; }
+  .cta-shape { padding-bottom: calc(clamp(72px, 10vw, 136px) + 30vw); }
+}

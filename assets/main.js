@@ -4,9 +4,20 @@
   var hero = document.getElementById('topo');
   var contact = document.getElementById('contacto');
 
-  // header border once the page moves
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  // o cabeçalho fica por cima da forma de abertura e só ganha fundo branco
+  // quando a forma acaba (ou quando um menu está aberto)
+  var opening = document.querySelector('.shape-hero');
+  function onScroll() {
+    var past = !opening || opening.getBoundingClientRect().bottom <= header.offsetHeight + 1;
+    var open = document.body.classList.contains('nav-open') || !!header.querySelector('.nav-item[aria-expanded="true"]');
+    header.classList.toggle('solid', past || open);
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  if ('MutationObserver' in window) {
+    new MutationObserver(onScroll).observe(header, { subtree: true, attributes: true, attributeFilter: ['aria-expanded'] });
+    new MutationObserver(onScroll).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  }
   onScroll();
 
   // primary nav: dropdown panels and the phone menu
