@@ -8,11 +8,11 @@
   // quando a forma acaba (ou quando um menu está aberto)
   var opening = document.querySelector('.shape-hero');
   // o cabeçalho fica transparente sobre a abertura e passa a branco assim que
-  // chega perto do título, antes de se cruzar com ele
+  // toca no título, no momento em que se cruzariam
   var title = opening && opening.querySelector('h1');
   function onScroll() {
     var h = header.offsetHeight;
-    var past = !opening || (title ? title.getBoundingClientRect().top - 24 : opening.getBoundingClientRect().bottom) <= h;
+    var past = !opening || (title ? title.getBoundingClientRect().top + 6 : opening.getBoundingClientRect().bottom) <= h;
     var open = document.body.classList.contains('nav-open') || !!header.querySelector('.nav-item[aria-expanded="true"]');
     header.classList.toggle('solid', past || open);
   }
