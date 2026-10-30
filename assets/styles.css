@@ -443,7 +443,10 @@ main { overflow-x: clip; }
   .split-pop::after { clip-path: polygon(0 58%, 100% 46%, 100% 100%, 0 100%); }
 }
 
-/* língua: PT / EN */
-.lang-toggle { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1.5px solid currentColor; font-size: 13px; font-weight: 600; letter-spacing: .06em; opacity: .85; transition: opacity .2s, background .2s; }
-.lang-toggle:hover { opacity: 1; }
-@media (max-width: 760px) { .lang-toggle { min-height: 34px; margin-right: 4px; } }
+/* língua: PT / EN, texto simples; a língua atual fica destacada */
+.lang-toggle { display: inline-flex; align-items: center; gap: 2px; font-size: 14px; font-weight: 600; letter-spacing: .04em; }
+.lang-toggle b, .lang-toggle a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 6px; }
+.lang-toggle b { font-weight: 700; }
+.lang-toggle a { opacity: .55; transition: opacity .2s; }
+.lang-toggle a:hover { opacity: 1; }
+.lang-toggle b + a::before { content: "/"; margin-right: 8px; opacity: .6; }
