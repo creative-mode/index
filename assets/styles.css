@@ -414,3 +414,31 @@ main { overflow-x: clip; }
   .hero h1, .page-hero h1, .page-hero .lead, .cta-inner > *, .cta-inner p { max-width: none; }
   .cta-shape { padding-bottom: calc(clamp(72px, 10vw, 136px) + 30vw); }
 }
+
+/* ===================================================================
+   Capas: as aberturas com pergunta e uma composição ao lado,
+   e uma capa por área de serviço com paleta e formas próprias.
+   =================================================================== */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: 32px clamp(24px, 4vw, 64px); }
+.hero-copy { display: flex; flex-direction: column; gap: 24px; }
+.hero-split h1, .hero-split .lead { max-width: none; }
+.hero-split h1 { font-size: clamp(36px, 4.8vw, 76px); line-height: 1; }
+.hero-cover { width: 100%; max-width: 560px; height: auto; justify-self: end; }
+.kx-name { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2vw, 28px); color: var(--purple); letter-spacing: -0.03em; }
+.kx-text h1 { font-size: clamp(36px, 4.6vw, 72px); line-height: 1; }
+
+.cover { position: relative; overflow: hidden; isolation: isolate; border-radius: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; min-height: clamp(200px, 22vw, 300px); margin-top: clamp(40px, 6vw, 80px); }
+.cover > * { position: relative; z-index: 1; }
+.cover-t { margin: 0; padding: clamp(24px, 4vw, 56px); font: 700 clamp(26px, 3vw, 44px)/1.04 var(--display); letter-spacing: -0.035em; max-width: 18ch; }
+.cover-art { width: 100%; height: 100%; max-height: 300px; display: block; }
+.cover.is-tint { color: var(--ink); }
+.split-pop::after { content: ""; position: absolute; inset: 0; z-index: 0; background: var(--pop); clip-path: polygon(60% 0, 100% 0, 100% 100%, 50% 100%); }
+.area .area-grid { border-top: 0; }
+
+@media (max-width: 760px) {
+  .hero-split { grid-template-columns: minmax(0, 1fr); }
+  .hero-cover { width: 86%; justify-self: end; margin-right: -4%; }
+  .cover { grid-template-columns: minmax(0, 1fr); }
+  .cover-art { height: 180px; }
+  .split-pop::after { clip-path: polygon(0 58%, 100% 46%, 100% 100%, 0 100%); }
+}
