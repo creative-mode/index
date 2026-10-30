@@ -39,7 +39,8 @@
     if (!nav || !menuBtn) return;
     nav.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', String(open));
-    menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    var en = document.documentElement.lang === 'en';
+    menuBtn.setAttribute('aria-label', open ? (en ? 'Close menu' : 'Fechar menu') : (en ? 'Open menu' : 'Abrir menu'));
     document.body.classList.toggle('nav-open', open);
     if (!open) closeMenus();
   }
